@@ -484,7 +484,8 @@ void UIMenu::_allocate_region()
     int more_height = m_menu->m_ui.more_bin->_get_preferred_size(Widget::VERT,
             m_region[2]).nat;
     // switch number of columns
-    if (m_draw_tiles && m_menu->is_set(MF_USE_TWO_COLUMNS))
+    if (m_draw_tiles && m_menu->is_set(MF_USE_TWO_COLUMNS)
+            && !Options.tile_single_column_menus)
     {
         if ((m_num_columns == 1 && m_height+more_height > max_height)
          || (m_num_columns == 2 && m_height+more_height <= max_height))
